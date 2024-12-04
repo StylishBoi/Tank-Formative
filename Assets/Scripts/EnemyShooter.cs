@@ -16,11 +16,6 @@ public class EnemyShooter : MonoBehaviour
         OnShoot();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     IEnumerator Fire()
     {
         while (true)

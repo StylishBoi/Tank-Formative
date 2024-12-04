@@ -1,14 +1,13 @@
-using System;
 using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
     [SerializeField] private float bulletForce = 50f;
     
-    AudioManager audioManager;
+    AudioManager _audioManager;
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }  
     void Start()
     {
@@ -21,14 +20,10 @@ public class EnemyProjectile : MonoBehaviour
         Debug.Log("Collision Enter ???? : " + other.gameObject.name);
         if (other.gameObject.TryGetComponent(out TankControls objective))
         {
-            objective.TakeDamage(1);
+            objective.PlayerDeath();
             Destroy(this.gameObject);
-            audioManager.StopBGM();
-            audioManager.PlaySFX(audioManager.gameover);
+            _audioManager.StopBGM();
+            _audioManager.PlaySfx(_audioManager.gameover);
         }
-    }
-    void Update()
-    {
-        
     }
 }

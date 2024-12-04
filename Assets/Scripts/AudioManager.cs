@@ -1,12 +1,10 @@
-using System;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     [Header("-----------Audio Source---------------")]
     [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioSource SFXSource;
+    [SerializeField] private AudioSource sfxSource;
 
     public AudioClip background;
     public AudioClip hit;
@@ -16,13 +14,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip death;
     void Start()
     {
+        //Starts the game by playing the BGM
         musicSource.clip = background;
         musicSource.Play();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySfx(AudioClip clip)
     {
-        SFXSource.PlayOneShot(clip);
+        sfxSource.PlayOneShot(clip);
     }
     public void StopBGM()
     {

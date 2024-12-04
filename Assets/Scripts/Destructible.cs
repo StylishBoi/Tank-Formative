@@ -6,13 +6,13 @@ public class Destructible : MonoBehaviour
 
     private int _hp;
     
-    AudioManager audioManager;
-    Enemies enemies;
+    AudioManager _audioManager;
+    WinCondition _wincondition;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        enemies = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemies>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        _wincondition = GameObject.FindGameObjectWithTag("WinCondition").GetComponent<WinCondition>();
     }    
     void Start()
     {
@@ -22,11 +22,11 @@ public class Destructible : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _hp -= damage;
-        audioManager.PlaySFX(audioManager.hit);
+        _audioManager.PlaySfx(_audioManager.hit);
         if (_hp <= 0)
         {
-            enemies.Death();
-            audioManager.PlaySFX(audioManager.death);
+            _wincondition.Total_Updated();
+            _audioManager.PlaySfx(_audioManager.death);
             Destroy(gameObject);
         }
         

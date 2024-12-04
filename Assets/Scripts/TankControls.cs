@@ -8,7 +8,7 @@ public class TankControls : MonoBehaviour
     
     private float _moveInput = 0f;
     private float _spinInput = 0f;
-    private int _hp=1;
+    private bool _isalive=true;
     
     private Rigidbody _rigidbody;
     
@@ -26,7 +26,7 @@ public class TankControls : MonoBehaviour
     void Update()
     {
         _rigidbody.AddForce(transform.forward * (_moveInput*_linearSpeed)); 
-        _rigidbody.AddRelativeTorque(0, _spinInput * _rollSpeed, 0);
+        _rigidbody.AddRelativeTorque(0, _spinInput * _rollSpeed, 1);
     }
 
     void OnMovement(InputValue value)
@@ -54,12 +54,12 @@ public class TankControls : MonoBehaviour
             _spinInput = -0.6f;
         }
     }
-    public void TakeDamage(int damage)
+    public void PlayerDeath()
     {
-        _hp -= damage;
-        if (_hp <= 0)
+        _isalive = false;
+        if (_isalive == false)
         {
-            Destroy(gameObject,1);
+            Destroy(gameObject,0);
         }
     }
 }

@@ -1,2 +1,19 @@
 fileFormatVersion: 2
 guid: 80ca6afe0ca55014ba0a1028a43c40ac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - musicSource: {instanceID: 0}
+  - SFXSource: {instanceID: 0}
+  - background: {fileID: 8300000, guid: 561e36db25b9ce049829da5067db0498, type: 3}
+  - hit: {fileID: 8300000, guid: 2beed47eb227efd4789c17774f9b5fe9, type: 3}
+  - gameover: {fileID: 8300000, guid: be186a8b6d46e0e4bbb66850af90a3c9, type: 3}
+  - win: {fileID: 8300000, guid: 3afe4a42adbc8504581a73c7b39d5fa3, type: 3}
+  - shoot: {fileID: 8300000, guid: 00bfbc863818f404689d3de30fbb0904, type: 3}
+  - death: {fileID: 8300000, guid: 2bc443941ccf4b142b05297b2fcb749b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
